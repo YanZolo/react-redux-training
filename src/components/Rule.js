@@ -3,6 +3,7 @@ import LikeBtn from "./LikeBtn";
 import classNames from "classnames";
 import { doDislike, doLike } from "../actions/likes-actions";
 import { useDispatch } from "react-redux";
+import { fetchDislikes, fetchLikes } from "../actions/likes-actions";
 
 const Rule = (props) => {
   const [folded, setFolded] = useState(false);
@@ -13,10 +14,10 @@ const Rule = (props) => {
   console.log("folded", folded);
 
   const handleDispatchLike = () => {
-    dispatch(doLike(rule.id));
+    dispatch(fetchLikes(rule.id));
   };
   const handleDispatchDislike = () => {
-    dispatch(doDislike(rule.id));
+    dispatch(fetchDislikes(rule.id));
   };
 
   return (

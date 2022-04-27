@@ -1,18 +1,19 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { loadRules } from "../actions/rules-actions";
 import Rule from "./Rule";
+import { fetchRules } from "../actions/rules-actions";
 
-const RuleList = (props) => {
+const RuleList = () => {
  
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadRules());
+    dispatch(fetchRules());
     
   }, []);
   
   const rules = useSelector((state) => state.rules.rules);
+  console.log('rules RuleList', rules)
 
   const elements = rules.map((ruleItem) => {
     return <Rule rule={ruleItem} key={ruleItem.id} />;
