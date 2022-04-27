@@ -17,6 +17,7 @@ export default function ruleApp(state = initialState, action) {
         }
         return { ...rule, dislikes: rule.dislikes + 1 };
       });
+      break;
     case DO_LIKE:
       state.rules.map((rule) => {
         if (rule.id !== action.id) {
@@ -24,6 +25,8 @@ export default function ruleApp(state = initialState, action) {
         }
         return { ...rule, likes: rule.likes + 1 };
       });
+      break;
+
     default:
       return state;
   }

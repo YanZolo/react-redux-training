@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import LikeBtn from "./LikeBtn";
 import classNames from "classnames";
-import { doDislike, doLike } from "../actions/likes-actions";
 import { useDispatch } from "react-redux";
 import { fetchDislikes, fetchLikes } from "../actions/likes-actions";
+import { Link } from "react-router-dom";
 
 const Rule = (props) => {
   const [folded, setFolded] = useState(false);
+ 
 
   const dispatch = useDispatch();
 
@@ -49,9 +50,9 @@ const Rule = (props) => {
           <span className="badge">craftsmanship</span>
           <span className="badge">clean code</span>
           <div className="btn-group btn-group-xs pull-right">
-            <a className="btn btn-primary" title="Update">
+            <Link className="btn btn-primary" title="Update" to={`/edit/${rule.id}`} >
               <i className="glyphicon glyphicon-pencil"></i>
-            </a>
+            </Link>
           </div>
           <LikeBtn
             onClick={handleDispatchLike}
