@@ -7,9 +7,10 @@ import { useSelector } from "react-redux";
 
 function RuleForm() {
     const params = useParams()
-    const ruleId = params.id
-    const rule = useSelector(state => state.rules.rules.find(rule => rule.id === ruleId))
-    console.log('RuleForm rule', rule)
+    const ruleId = parseInt(params.id)
+    const rule = useSelector(state => state.rules.rules.find(rule => rule.id === ruleId)) || []
+    console.log('RuleForm.js ruleId from params ==> : ', ruleId)
+    console.log('RuleForm.js rule from strore ===> : ', rule)
 
   return (
     <div className="panel panel-primary">

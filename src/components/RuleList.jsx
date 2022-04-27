@@ -13,7 +13,7 @@ const RuleList = () => {
   }, []);
   
   const rules = useSelector((state) => state.rules.rules);
-  console.log('rules RuleList', rules)
+  console.log('RuleList.js rules from store', rules)
 
   const elements = rules.map((ruleItem) => {
     return <Rule rule={ruleItem} key={ruleItem.id} />;

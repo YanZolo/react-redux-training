@@ -1,14 +1,15 @@
 import React from "react";
 
 function RuleDescriptionField(props) {
+  const {description} = props
   return (
     <div className="form-group">
-      <label for="rule-desc">Description</label>
+      <label htmlFor="rule-desc">Description</label>
       <textarea
         className="form-control"
         id="rule-desc"
         placeholder="Description"
-        defaultValue={props.description}
+        defaultValue={description ? description : ""}
       />
     </div>
   );

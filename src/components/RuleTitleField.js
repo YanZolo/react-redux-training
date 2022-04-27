@@ -1,15 +1,16 @@
 import React from "react";
 
 function RuleTitleField(props) {
+  const {title} = props
   return (
     <div className="form-group">
-      <label for="rule-title">Title</label>
+      <label htmlFor="rule-title">Title</label>
       <input
         type="text"
         className="form-control"
         id="rule-title"
         placeholder="Title"
-        defaultValue={props.title}
+        defaultValue={title ? title: ""}
       />
     </div>
   );
